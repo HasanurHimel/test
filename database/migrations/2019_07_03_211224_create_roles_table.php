@@ -18,6 +18,16 @@ class CreateRolesTable extends Migration
             $table->string('name');
             $table->timestamps();
         });
+
+        Schema::create('admin_role', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('admin_id');
+            $table->unsignedBigInteger('role_id');
+            $table->timestamps();
+
+            $table->foreign('admin_id')->references('id')->on('admins')->onDelete('cascade');
+            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
+        });
     }
 
     /**

@@ -40,19 +40,5 @@ class Admin extends Authenticatable
 
     }
 
-//    public function isSuperAdmin($ability){
-//        foreach (\auth()->user()->roles as $role){
-//            foreach ($role->permissions as $permission) {
-//                if ($permission->name==$ability){
-//                    return true;
-//                }
-//            }
-//
-//        }
-//
-//    }
-
-
-
 
 }
