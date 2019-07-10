@@ -149,32 +149,18 @@
                             <li>
                                 <!-- inner menu: contains the actual data -->
                                 <ul class="menu">
+                                    @php($i=1)
+                                    @foreach (auth()->user()->notifications as $notification)
+                                   <?php $count=$i++ ?>
                                     <li>
-                                        <a href="#">
-                                            <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                                        </a>
+
+                                            <i class="fa fa-users text-aqua"></i> {{  $notification->data['author_name']. ' created a Blog which title'}} <span style="color: #1e7e34;">{{ $notification->data['blog_title']  }}</span>
+                                       <br>
+                                        <small class="pull-right text-success time-label"><i>{{ $notification->created_at->diffForHumans() }}</i></small>
                                     </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
-                                            page and may cause design problems
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-users text-red"></i> 5 new members joined
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-shopping-cart text-green"></i> 25 sales made
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-user text-red"></i> You changed your username
-                                        </a>
-                                    </li>
+                                        <hr>
+                                     @endforeach
+
                                 </ul>
                             </li>
                             <li class="footer"><a href="#">View all</a></li>

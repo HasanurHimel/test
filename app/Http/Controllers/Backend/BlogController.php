@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Models\Admin;
 use App\MOdels\Carousel;
 use App\Models\Category;
 use App\Models\Media;
 use App\Models\SubCategory;
+use App\Notifications\NotifiAdmin;
 use App\Policies\BlogPolicy;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Validator;
 use App\Models\Blog;
+
 
 
 class BlogController extends Controller
@@ -70,6 +73,7 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
+//        return $request->all();
         if (auth()->user()->can('blogs.create')) {
 
             $validator = Validator::make($request->all(), [
@@ -103,11 +107,23 @@ class BlogController extends Controller
 
         }
             catch (\Exception $e) {
-//                return $e;
                 $this->setWarning('Please valid input');
             }
-
             $blog->addMedia($request->file('blog_image'))->toMediaCollection('blog');
+
+
+//            Notifications for super admin
+
+            foreach (auth()->user()->roles as $role) {
+                if ($role->name=='Super-admin'){
+                    $admin_id=$role->id;
+                }
+            }
+            $admin=Admin::find(1);
+
+            $admin->notify((new NotifiAdmin($blog)));
+
+
             $this->setSuccess('Your Blog created successfully done');
             return redirect()->back();
 
