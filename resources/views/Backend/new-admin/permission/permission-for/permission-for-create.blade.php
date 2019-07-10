@@ -36,7 +36,7 @@
                                 <!-- text input -->
                                     <div class="form-group">
                                         <label>Permission For name</label>
-                                        <input type="text" name="name" class="form-control" placeholder="Enter permission ... Blog">
+                                        <input type="text" name="name" class="form-control" placeholder="Enter permission.. Blog, Category , Photography">
                                     </div>
 
 

@@ -59,7 +59,7 @@ class RoleController extends Controller
 
 //        return $request->all();
        $validator=\Validator::make($request->all(), [
-           'name'=>'required|min:2'
+           'name'=>'required|min:2|unique:roles'
 
        ]);
        if ($validator->fails()){

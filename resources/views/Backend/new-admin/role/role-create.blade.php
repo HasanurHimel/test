@@ -10,7 +10,7 @@
 
 
 
-                <div class="col-sm-offset-1 col-sm-10 col-md-10" style="padding-top: 30px;">
+                <div class="col-sm-offset-1 col-md-9" style="padding-top: 30px;">
 
 
                     <div class="panel">
@@ -41,11 +41,12 @@
 
 
 
-                                    <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-12">
 
-                                    @foreach($permissions_for as $permission_for)
+                                            @foreach($permissions_for as $permission_for)
 
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-4 col-xs-4" style="min-height: 80px">
                                                     <div class="form-group">
                                                         <label>{{ $permission_for->permissions == NULL ? '' : $permission_for->name}}</label>
                                                         @foreach($permission_for->permissions as $permission)
@@ -57,7 +58,9 @@
                                                     </div>
                                                 </div>
 
-                                        @endforeach
+                                            @endforeach
+
+                                        </div>
                                     </div>
 
 

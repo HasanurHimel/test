@@ -9,7 +9,7 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class AdminPolicy
 {
     use HandlesAuthorization;
-    
+
 
     public function create(Admin $user)
     {

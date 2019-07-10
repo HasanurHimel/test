@@ -24,7 +24,35 @@ class Admin extends Authenticatable
 
 
     public function roles(){
-        return $this->belongsToMany(Role::class);
+        return $this->belongsToMany( Role::class);
     }
+
+
+    public function isSuperAdmin($ability){
+        foreach (\auth()->user()->roles as $role){
+
+                if ($role->name==$ability){
+                    return true;
+                }
+
+
+        }
+
+    }
+
+//    public function isSuperAdmin($ability){
+//        foreach (\auth()->user()->roles as $role){
+//            foreach ($role->permissions as $permission) {
+//                if ($permission->name==$ability){
+//                    return true;
+//                }
+//            }
+//
+//        }
+//
+//    }
+
+
+
 
 }

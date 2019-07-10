@@ -50,7 +50,7 @@ class PermissionController extends Controller
 
 
         $validator=\Validator::make($request->all(), [
-            'name'=>'required|min:2|max:50',
+            'name'=>'required|min:2|max:50|unique:permissions',
             'permission_for_id'=>'required'
         ]);
         if ($validator->fails()){

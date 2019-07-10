@@ -36,7 +36,7 @@
                                 <!-- text input -->
                                     <div class="form-group">
                                         <label>Permission name</label>
-                                        <input type="text" value="" name="name" class="form-control" placeholder="Enter permission-   Post.create" >
+                                        <input type="text" value="" name="name" class="form-control" placeholder="Enter permission- blog.(create,update,delete,status), crud" >
                                     </div>
 
                                     <div class="form-group">

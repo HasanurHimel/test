@@ -22,7 +22,8 @@ class CreateBlogsTable extends Migration
             $table->string('blog_short_description');
             $table->longText('blog_long_description');
             $table->string('author_name');
-            $table->tinyInteger('publication_status');
+            $table->tinyInteger('thumbnail')->default(0);
+            $table->tinyInteger('publication_status')->default(0);
             $table->timestamps();
 
             $table->foreign('admin_id')->references('id')->on('admins')->onDelete('cascade');

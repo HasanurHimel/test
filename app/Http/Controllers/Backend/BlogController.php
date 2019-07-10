@@ -18,7 +18,7 @@ class BlogController extends Controller
    
    public function __construct()
     {
-		$this->middleware('can:blogs.view,App\Models\Blog')->only(['show', 'update']);
+		$this->middleware('can:blogs.update,App\Models\Blog')->only(['show', 'update']);
     }
    
    
@@ -27,11 +27,23 @@ class BlogController extends Controller
     public function index()
     {
         if (auth()->user()->can('blogs.viewAny')) {
-            $blogs = Blog::orderBy('id', 'DESC')->get();
-            return view('Backend.includes.blog.blog-manage', compact('blogs'));
+
+            if (auth()->user()->can('admins.create')) {
+                $blogs = Blog::orderBy('id', 'DESC')
+                    ->get();
+                return view('Backend.includes.blog.blog-manage', compact('blogs'));
+
+
+            } else {
+                $blogs = Blog::where('admin_id', auth()->user()->id)
+                    ->orderBy('id', 'DESC')
+                    ->get();
+                return view('Backend.includes.blog.blog-manage', compact('blogs'));
+            }
         }
 
-        return redirect()->back();
+          return redirect()->back();
+
 
 }
 
@@ -66,9 +78,7 @@ class BlogController extends Controller
                 'blog_title' => 'required|min:5|max:120',
                 'blog_short_description' => 'required|min:5|max:120',
                 'blog_long_description' => 'required|min:5',
-                'author_name' => 'required|min:2',
                 'blog_image' => 'required',
-                'publication_status' => 'required',
             ]);
 
             if ($validator->fails()) {
@@ -78,20 +88,22 @@ class BlogController extends Controller
 
             try {
 
-                $blog = Blog::create([
+                $request->thumbnail ? : $request['thumbnail']=0;
+                $blog=Blog::create([
                     'admin_id' => auth()->user()->id,
                     'category_id' => $request->input('category_id'),
                     'sub_category_id' => $request->input('subcategory_id'),
                     'blog_title' => $request->input('blog_title'),
                     'blog_short_description' => $request->input('blog_short_description'),
                     'blog_long_description' => $request->input('blog_long_description'),
-                    'author_name' => $request->input('author_name'),
+                    'author_name' => auth()->user()->name,
+                    'thumbnail' => $request->input('thumbnail'),
                     'publication_status' => $request->input('publication_status'),
-
                 ]);
 
-
-            } catch (\Exception $e) {
+        }
+            catch (\Exception $e) {
+//                return $e;
                 $this->setWarning('Please valid input');
             }
 
@@ -143,8 +155,6 @@ class BlogController extends Controller
                 'blog_title' => 'required|min:5|max:120',
                 'blog_short_description' => 'required|min:5|max:120',
                 'blog_long_description' => 'required|min:5',
-                'author_name' => 'required|min:2',
-                'publication_status' => 'required',
             ]);
 
             if ($validator->fails()) {
@@ -163,7 +173,8 @@ class BlogController extends Controller
                     'blog_title' => $request->input('blog_title'),
                     'blog_short_description' => $request->input('blog_short_description'),
                     'blog_long_description' => $request->input('blog_long_description'),
-                    'author_name' => $request->input('author_name'),
+                    'author_name' => auth()->user()->name,
+                    'thumbnail' => $request->input('thumbnail'),
                     'publication_status' => $request->input('publication_status'),
 
                 ]);
@@ -204,7 +215,7 @@ class BlogController extends Controller
 
     public function publishedBlog($id){
 
-        //if (auth()->user()->can('blogs.publication_status')) {
+        //if (auth()->user()->can('blogs.status')) {
 
             $blog = Blog::find($id);
 
@@ -218,7 +229,7 @@ class BlogController extends Controller
     }
     public function unpublishedBlog($id){
 
-        //if (auth()->user()->can('blogs.publication_status')) {
+        //if (auth()->user()->can('blogs.status')) {
             $blog = Blog::find($id);
 
             $blog->publication_status = 0;

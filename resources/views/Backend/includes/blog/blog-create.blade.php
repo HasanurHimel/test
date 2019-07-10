@@ -24,8 +24,10 @@
 @section('content')
 
 
-    <div class="content-wrapper">
 
+
+    <div class="content-wrapper">
+        @include('Backend.errors.errors')
 
         <section class="content" style="padding-top: 10px;background-color: #9f191f">
             <div class="row">
@@ -42,6 +44,7 @@
 
 
 
+
                         <div class="panel-body">
 
 
@@ -53,7 +56,7 @@
                                 @csrf
 
 
-                                @include('Backend.errors.errors')
+
 
                                 <!-- text input -->
                                     <div class="row">
@@ -64,7 +67,7 @@
                                                     <option value="">__Select your Catgeory__</option>
                                                     @foreach($categories as $category)
 
-                                                        <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+                                                        <option {{ (old("category_id") == $category->id ? "selected":"") }} value="{{ $category->id }}">{{ $category->category_name }}</option>
 
                                                     @endforeach
                                                 </select>
@@ -77,7 +80,7 @@
                                                     <option value="">__Select your sub-Catgeory__</option>
                                                     @foreach($subcategories as $subcategory)
 
-                                                        <option value="{{ $subcategory->id }}">{{ $subcategory->subcategory_name }}</option>
+                                                        <option {{ (old("subcategory_id") == $subcategory->id ? "selected":"") }} value="{{ $subcategory->id }}">{{ $subcategory->subcategory_name }}</option>
 
                                                     @endforeach
                                                 </select>
@@ -87,20 +90,12 @@
 
 
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-10">
                                             <div class="form-group">
                                                 <label>Blog Title</label>
                                                 <input type="text" value="{{ old('blog_title') }}" name="blog_title" class="form-control" placeholder="Enter title" >
                                             </div>
 
-                                        </div>
-
-
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Author name</label>
-                                                <input type="text" name="author_name" value="{{ old('author_name') }}" class="form-control" placeholder="Enter title" >
-                                            </div>
                                         </div>
                                     </div>
 
@@ -140,16 +135,29 @@
                                     </div>
 
 
-
-
-
                                     <div class="form-group">
-                                        <div class="radio">
-                                            <label><input type="radio" name="publication_status" value="1" class="flat-red">Published</label>
-                                            <label><input type="radio" name="publication_status" value="0" class="flat-red">Unpublished</label>
+                                        <label>Large Thumbnail blog</label>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" {{ old('thumbnail') ?'checked' : '' }} name="thumbnail" value="1" class="flat-red">Thumbnail</label>
                                         </div>
 
                                     </div>
+
+
+
+
+                                    @can('blogs.status', auth()->user())
+                                    <div class="form-group">
+                                        <label>Publication status</label>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" {{ old('publication_status')==1 ?'checked' : '' }} name="publication_status" value="1" class="flat-red">Published</label>
+                                            <label><input type="checkbox" {{ old('publication_status')==0 ?'checked' : '' }} name="publication_status" value="0" class="flat-red">Published</label>
+
+
+                                        </div>
+
+                                    </div>
+                                    @endcan
 
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-block btn-success">Create Post</button>

@@ -132,7 +132,16 @@
                                         </div>
                                     </div>
 
+                                    <div class="form-group">
+                                        <label>Large Thumbnail blog</label>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" {{ $blog->thumbnail ==1 ?'checked' : '' }} name="thumbnail" value="1" class="flat-red">Thumbnail</label>
+                                        </div>
 
+                                    </div>
+
+
+                                    @can('blogs.status', auth()->user())
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
@@ -144,6 +153,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @endcan
 
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-block btn-success">Create Post</button>

@@ -41,7 +41,7 @@ class PermissionForController extends Controller
     public function store(Request $request)
     {
         $validator=\Validator::make($request->all(), [
-            'name'=>'required|min:2'
+            'name'=>'required|min:2|unique:permission_fors'
 
         ]);
         if ($validator->fails()){

@@ -9,7 +9,7 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class BlogPolicy
 {
     use HandlesAuthorization;
-    
+
 
     public function viewAny(Admin $user)
     {
@@ -33,31 +33,19 @@ class BlogPolicy
 
     public function update(Admin $user)
     {
-
         return $this->getPermissions($user, 'blog.update');
     }
 
-
-
-
-    /**
-     * Determine whether the user can update the blog.
-     *
-     * @param  \App\Models\Admin  $user
-     * @param  \App\Blog  $blog
-     * @return mixed
-     */
-
-	
-	public function view(Admin $user)
-    {
-        return $this->getPermissions($user, 'blog.edit');
-    }
+//
+//    public function view(Admin $user)
+//    {
+//        return $this->getPermissions($user, 'blog.edit');
+//    }
 
 
 
 
-    public function publication_status(Admin $user)
+    public function status(Admin $user)
     {
         return $this->getPermissions($user, 'blog.status');
     }
@@ -84,7 +72,7 @@ class BlogPolicy
      */
     public function restore(Admin $user, Blog $blog)
     {
-        
+
     }
 
 
@@ -108,7 +96,7 @@ class BlogPolicy
         return false;
 
 
-}
+    }
 
 
 

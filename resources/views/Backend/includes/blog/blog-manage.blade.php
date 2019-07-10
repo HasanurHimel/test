@@ -65,14 +65,16 @@
                                     <th>Category</th>
                                     <th>Sub-category</th>
                                     <th>Title</th>
-                                    <th>Photo</th>
+{{--                                    <th>Photo</th>--}}
                                     <th>Author</th>
+                                    <th>Status</th>
                                     @can('blogs.viewAny', auth()->user())
                                     <th>Action Method</th>
                                         @endcan
                                 </tr>
                                 </thead>
                                 <tbody>
+
                                 @php($i=1)
                                 @foreach($blogs as $blog)
 
@@ -82,12 +84,12 @@
                                         <td>{{ $blog->category->category_name }}</td>
                                         <td>{{ $blog->sub_category->subcategory_name }}</td>
                                         <td>{{ $blog->blog_title }}</td>
-                                        <td><img src="{{ $blog->getFirstMediaUrl('blog') }}" width="100px" height="40px"></td>
-
+{{--                                        <td><img src="{{ $blog->getFirstMediaUrl('blog') }}" width="100px" height="40px"></td>--}}
+                                        <td>{{ $blog->author_name }}</td>
                                         <td>{{ $blog->publication_status ==1 ? 'Published' :'Unpublished' }}</td>
                                         @can('blogs.viewAny', auth()->user())
                                         <td>
-                                            @can('blogs.publication_status', auth()->user())
+                                            @can('blogs.status', auth()->user())
                                             @if($blog->publication_status==0)
                                                 <a href="{{ route('blog.published', $blog->id) }}" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-arrow-down"></span></a>
                                             @else
@@ -96,7 +98,7 @@
                                             @endcan
 
 
-                                            @can('blogs.view', auth()->user())
+                                            @can('blogs.update', auth()->user())
                                             <a href="{{ route('blog.show', $blog->id) }}" class="btn btn-xs btn-success"><span class="glyphicon glyphicon-edit"></span></a>
                                             @endcan
 
