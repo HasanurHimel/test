@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMetaTagsTable extends Migration
+class CreateNoticesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateMetaTagsTable extends Migration
      */
     public function up()
     {
-        Schema::create('meta_tags', function (Blueprint $table) {
+        Schema::create('notices', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('meta_tags');
-            $table->string('web_title');
+            $table->text('notice');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateMetaTagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('meta_tags');
+        Schema::dropIfExists('notices');
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Models\Admin;
+use App\Models\BlogSection;
 use App\MOdels\Carousel;
 use App\Models\Category;
 use App\Models\Media;
@@ -55,7 +56,9 @@ class BlogController extends Controller
     public function create()
     {
         if (auth()->user()->can('blogs.create')) {
+
             $data=[];
+            $data['blogSections']=BlogSection::orderBy('name', 'ASC')->get();
             $data['categories']=Category::orderBy('category_name', 'ASC')->get();
             $data['subcategories']=SubCategory::orderBy('subcategory_name', 'ASC')->get();
 
@@ -65,24 +68,26 @@ class BlogController extends Controller
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    function make_slug($string) {
+        return preg_replace('/\s+/u', '-', trim($string));
+    }
+
+
+
+
     public function store(Request $request)
     {
+
 //        return $request->all();
         if (auth()->user()->can('blogs.create')) {
 
             $validator = Validator::make($request->all(), [
                 'category_id' => 'required',
-                'subcategory_id' => 'required',
-                'blog_title' => 'required|min:5|max:120',
-                'blog_short_description' => 'required|min:5|max:120',
+                'blog_title' => 'required|min:5|max:120|unique:blogs',
+                'blog_short_description' => 'required|min:5|max:180',
                 'blog_long_description' => 'required|min:5',
                 'blog_image' => 'required',
+                'blog_section_id' => 'required',
             ]);
 
             if ($validator->fails()) {
@@ -98,10 +103,12 @@ class BlogController extends Controller
                     'category_id' => $request->input('category_id'),
                     'sub_category_id' => $request->input('subcategory_id'),
                     'blog_title' => $request->input('blog_title'),
+                    'slug' => $this->make_slug($request->input('blog_title')),
                     'blog_short_description' => $request->input('blog_short_description'),
                     'blog_long_description' => $request->input('blog_long_description'),
                     'author_name' => auth()->user()->name,
                     'thumbnail' => $request->input('thumbnail'),
+                    'blog_section_id' => $request->input('blog_section_id'),
                     'publication_status' => $request->input('publication_status'),
                 ]);
 
@@ -112,7 +119,11 @@ class BlogController extends Controller
             $blog->addMedia($request->file('blog_image'))->toMediaCollection('blog');
 
 
+
 //            Notifications for super admin
+
+
+
 
             foreach (auth()->user()->roles as $role) {
                 if ($role->name=='Super-admin'){
@@ -136,6 +147,7 @@ class BlogController extends Controller
     {
         
             $data = [];
+            $data['blogSections']=BlogSection::orderBy('name', 'ASC')->get();
             $data['categories'] = Category::orderBy('category_name', 'ASC')->get();
             $data['subcategories'] = SubCategory::orderBy('subcategory_name', 'ASC')->get();
             $data['blog'] = Blog::find($id);
@@ -155,22 +167,16 @@ class BlogController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         
             $validator = Validator::make($request->all(), [
                 'category_id' => 'required',
-                'subcategory_id' => 'required',
                 'blog_title' => 'required|min:5|max:120',
-                'blog_short_description' => 'required|min:5|max:120',
+                'blog_short_description' => 'required|min:5|max:180',
                 'blog_long_description' => 'required|min:5',
+                'blog_section_id' => 'required',
             ]);
 
             if ($validator->fails()) {
@@ -187,10 +193,12 @@ class BlogController extends Controller
                     'category_id' => $request->input('category_id'),
                     'sub_category_id' => $request->input('subcategory_id'),
                     'blog_title' => $request->input('blog_title'),
+                    'slug' => $this->make_slug($request->input('blog_title')),
                     'blog_short_description' => $request->input('blog_short_description'),
                     'blog_long_description' => $request->input('blog_long_description'),
                     'author_name' => auth()->user()->name,
                     'thumbnail' => $request->input('thumbnail'),
+                    'blog_section_id' => $request->input('blog_section_id'),
                     'publication_status' => $request->input('publication_status'),
 
                 ]);

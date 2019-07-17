@@ -17,8 +17,10 @@ class CreateBlogsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('admin_id');
             $table->unsignedBigInteger('category_id');
-            $table->unsignedBigInteger('sub_category_id');
-            $table->string('blog_title');
+            $table->unsignedBigInteger('sub_category_id')->nullable();
+            $table->unsignedBigInteger('blog_section_id')->nullable();
+            $table->string('blog_title')->unique();
+            $table->string('slug')->unique();
             $table->string('blog_short_description');
             $table->longText('blog_long_description');
             $table->string('author_name');
@@ -29,6 +31,7 @@ class CreateBlogsTable extends Migration
             $table->foreign('admin_id')->references('id')->on('admins')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->foreign('sub_category_id')->references('id')->on('sub_categories')->onDelete('cascade');
+            $table->foreign('blog_section_id')->references('id')->on('blog_sections')->onDelete('cascade');
         });
     }
 

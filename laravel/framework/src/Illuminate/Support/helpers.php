@@ -1059,6 +1059,8 @@ if (! function_exists('str_singular')) {
     }
 }
 
+
+
 if (! function_exists('str_slug')) {
     /**
      * Generate a URL friendly "slug" from a given string.

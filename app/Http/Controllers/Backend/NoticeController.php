@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Models\Notice;
+use App\Models\Seo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Mockery\Matcher\Not;
 
-class MetaTagController extends Controller
+class NoticeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +27,7 @@ class MetaTagController extends Controller
      */
     public function create()
     {
-        //
+        return view('Backend.includes.notice.create-notice');
     }
 
     /**
@@ -35,7 +38,20 @@ class MetaTagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $validator=\Validator::make($request->all(), [
+            'notice' =>'required|min:5|max:400',
+        ]);
+        if ($validator->fails()){
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        Notice::create([
+            'notice'=>$request->input('notice'),
+        ]);
+
+        $this->setSuccess('Your Notice is updated');
+        return redirect()->back();
     }
 
     /**
@@ -46,7 +62,8 @@ class MetaTagController extends Controller
      */
     public function show($id)
     {
-        //
+        $notice=Notice::find(1);
+        return view('Backend.includes.notice.manage-notice', compact('notice'));
     }
 
     /**
@@ -69,7 +86,20 @@ class MetaTagController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator=\Validator::make($request->all(), [
+            'notice' =>'required|min:5|max:400',
+        ]);
+        if ($validator->fails()){
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $notice=Notice::find(1);
+        $notice->update([
+            'notice'=>$request->input('notice'),
+        ]);
+
+        $this->setSuccess('Your Notice is updated');
+        return redirect()->back();
     }
 
     /**

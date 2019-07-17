@@ -63,7 +63,7 @@
                                     <th>Sl No:</th>
                                     <th>Admin</th>
                                     <th>Category</th>
-                                    <th>Sub-category</th>
+                                    <th>Blog-section</th>
                                     <th>Title</th>
 {{--                                    <th>Photo</th>--}}
                                     <th>Author</th>
@@ -82,7 +82,8 @@
                                         <td>{{ $i++ }}</td>
                                         <td>{{ $blog->admin->name }}</td>
                                         <td>{{ $blog->category->category_name }}</td>
-                                        <td>{{ $blog->sub_category->subcategory_name }}</td>
+{{--                                        <td>{{ $blog->sub_category->subcategory_name !==null ?$blog->sub_category->subcategory_name :'' }}</td>--}}
+                                        <td>{{ $blog->blogSection->name }}</td>
                                         <td>{{ $blog->blog_title }}</td>
 {{--                                        <td><img src="{{ $blog->getFirstMediaUrl('blog') }}" width="100px" height="40px"></td>--}}
                                         <td>{{ $blog->author_name }}</td>

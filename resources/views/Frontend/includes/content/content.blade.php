@@ -17,14 +17,13 @@
                     <div class="single_page">
                     <ol class="breadcrumb">
                         <li><a href="{{ route('/') }}">Home/ </a></li>
-                        <li class="active"><a href="#"> Technology</a></li>
+                        <li class="active"><a href="#"> {{ $article->category->category_name }}</a></li>
                     </ol>
-                    <h1>Morbi dapibus, enim quis luctus interdum</h1>
-                    <div class="post_commentbox"> <a href="#"><i class="fa fa-user"></i>Wpfreeware</a> <span><i class="fa fa-calendar"></i>6:49 AM</span> <a href="#"><i class="fa fa-tags"></i>Technology</a> </div>
+                    <h1>{{ $article->blog_title }}</h1>
+                    <div class="post_commentbox"> <a href="#"><i class="fa fa-user"></i>{{ $article->author_name }}</a> <span><i class="fa fa-calendar"></i>{{ $article->created_at->toFormattedDateString() }}</span>  </div>
 
-                    <div class="single_page_content"> <img class="img-center" src="../images/single_post_img.jpg" alt="">
-                        <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra urna. Morbi dui lectus, pharetra nec elementum eget, vulputate ut nisi. Aliquam accumsan, nulla sed feugiat vehicula, lacus justo semper libero, quis porttitor turpis odio sit amet ligula. Duis dapibus fermentum orci, nec malesuada libero vehicula ut. Integer sodales, urna eget interdum eleifend, nulla nibh laoreet nisl, quis dignissim mauris dolor eget mi. Donec at mauris enim. Duis nisi tellus, adipiscing a convallis quis, tristique vitae risus. Nullam molestie gravida lobortis. Proin ut nibh quis felis auctor ornare. Cras ultricies, nibh at mollis faucibus, justo eros porttitor mi, quis auctor lectus arcu sit amet nunc. Vivamus gravida vehicula arcu, vitae vulputate augue lacinia faucibus.</p>
-                        <blockquote> Donec volutpat nibh sit amet libero ornare non laoreet arcu luctus. Donec id arcu quis mauris euismod placerat sit amet ut metus. Sed imperdiet fringilla sem eget euismod. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque adipiscing, neque ut pulvinar tincidunt, est sem euismod odio, eu ullamcorper turpis nisl sit amet velit. Nullam vitae nibh odio, non scelerisque nibh. Vestibulum ut est augue, in varius purus. </blockquote>
+                    <div class="single_page_content">
+                        <p>{!! $article->blog_long_description !!} </p>
 
                     </div>
 
@@ -48,29 +47,8 @@
                             </div>
                             <div class="card-body p-3">
                                 <div class="media">
-                                    <div class="media-left">
-                                        <img src="img_avatar1.png" class="media-object" style="width:45px">
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">John Doe <small><i>Posted on February 19, 2016</i></small></h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-                                        <!-- Nested media object -->
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <img src="img_avatar2.png" class="media-object" style="width:45px">
-                                            </div>
-                                            <div class="media-body">
-                                                <h4 class="media-heading">John Doe <small><i>Posted on February 19, 2016</i></small></h4>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-                                                <!-- Nested media object -->
 
 
-                                            </div>
-                                        </div>
-
-                                    </div>
                                 </div>
                             </div>
                         </div>

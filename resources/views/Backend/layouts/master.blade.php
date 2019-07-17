@@ -139,34 +139,68 @@
                         </ul>
                     </li>
                     <!-- Notifications: style can be found in dropdown.less -->
-                    <li class="dropdown notifications-menu">
+
+
+                    <li class="dropdown messages-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-bell-o"></i>
-                            <span class="label label-warning">10</span>
+                            @if(auth()->user()->unreadNotifications->count())
+                            <span class="label label-success">{{ auth()->user()->unreadNotifications->count() }}</span>
+                                @endif
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="header">You have 10 notifications</li>
+                            <li class="header">You have {{ auth()->user()->readNotifications->count() }} Notifications</li>
                             <li>
                                 <!-- inner menu: contains the actual data -->
                                 <ul class="menu">
-                                    @php($i=1)
-                                    @foreach (auth()->user()->notifications as $notification)
-                                   <?php $count=$i++ ?>
+
+
+                                    <!-- start message -->
+                                    @foreach (auth()->user()->unreadNotifications   as $notification)
+                                    <li style="background-color: #89E6C4;">
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <img src="{{ asset('/') }}backend/dist/img/unreadnotification.png" class="img-circle" alt="User Image">
+                                            </div>
+                                            <h4>
+                                                {{ $notification->data['author_name'] }}
+                                                <small><i class="fa fa-clock-o"></i> {{ $notification->created_at->diffForHumans() }}</small>
+                                            </h4>
+                                            <p>Created a Blog which title <span style="color: #1c94c4">{{ $notification->data['blog_title'] }}</span></p>
+                                        </a>
+                                    </li>
+                                        {{ $notification->markAsRead() }}
+                                    @endforeach
+                                    @foreach (auth()->user()->readNotifications as $notification)
                                     <li>
 
-                                            <i class="fa fa-users text-aqua"></i> {{  $notification->data['author_name']. ' created a Blog which title'}} <span style="color: #1e7e34;">{{ $notification->data['blog_title']  }}</span>
-                                       <br>
-                                        <small class="pull-right text-success time-label"><i>{{ $notification->created_at->diffForHumans() }}</i></small>
+                                        <a>
+                                            <div class="pull-left">
+                                                <img src="{{ asset('/') }}backend/dist/img/notification.png" class="img-circle" alt="User Image">
+
+                                            </div>
+                                            <h4>
+                                                {{ $notification->data['author_name'] }}
+
+                                            </h4>
+                                            <p>Created a Blog which title <span style="color: #1b886f"><b>{{ $notification->data['blog_title'] }}</b></span></p>
+
+
+
+                                        <small class="pull-right"><i class="fa fa-clock-o"></i> {{ $notification->created_at->diffForHumans() }}</small>
+                                        </a>
                                     </li>
-                                        <hr>
-                                     @endforeach
+
+                                    @endforeach
+                                    <!-- end message -->
 
                                 </ul>
                             </li>
-                            <li class="footer"><a href="#">View all</a></li>
+                            <li class="footer"><a href="#">See All Notifications</a></li>
                         </ul>
                     </li>
-                    <!-- Tasks: style can be found in dropdown.less -->
+
+
                     <li class="dropdown tasks-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-flag-o"></i>
@@ -263,6 +297,8 @@
 
 
                             <!-- Menu Footer-->
+
+
                             <li class="user-footer" style="background-color: #191f17ab">
                                 <div class="pull-left">
                                     <a href="#" class="btn btn-block btn-success btn-flat">Profile</a>
@@ -345,7 +381,26 @@
 
 
 
+                @can('seo.create', auth()->user())
         <li class="treeview menu-open">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>SEO</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        @if(\App\Models\Seo::find(1))
+                            <li><a href="{{ route('seo.show', 2) }}"><i class="fa fa-circle-o"></i>Manage Seo essential</a></li>
+
+                        @else
+                            <li class="active"><a href="{{ route('seo.create') }}"><i class="fa fa-circle-o"></i> create Seo essential</a></li>
+                            @endif
+                    </ul>
+                </li>
+                @endcan
+
+                <li class="treeview menu-open">
                     <a href="#">
                         <i class="fa fa-dashboard"></i> <span>Profile</span>
                         <span class="pull-right-container">
@@ -358,11 +413,56 @@
                         <li class="active"><a href="{{ route('profile.create') }}"><i class="fa fa-circle-o"></i> Create Profile</a></li>
                         @endcan
                         @can('profile.view', auth()->user())
-                        <li><a href="{{ route('profile.show', 2) }}"><i class="fa fa-circle-o"></i>Edit Profile</a></li>
+                        <li><a href="{{ route('profile.show', 1) }}"><i class="fa fa-circle-o"></i>Edit Profile</a></li>
                         @endcan
                     </ul>
                </li>
 
+                <li class="treeview menu-open">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>Advertise</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+
+{{--                        @can('profile.create', auth()->user())--}}
+                        <li class="active"><a href="{{ route('ad-position.create') }}"><i class="fa fa-circle-o"></i> Create Ad position</a></li>
+                        <li class="active"><a href="{{ route('ad-position.index') }}"><i class="fa fa-circle-o"></i> Manage Ad position</a></li>
+                        <li class="active"><a href="{{ route('advertise.create') }}"><i class="fa fa-circle-o"></i> Create advertise</a></li>
+{{--                        @endcan--}}
+{{--                        @can('profile.view', auth()->user())--}}
+                        <li><a href="{{ route('advertise.index') }}"><i class="fa fa-circle-o"></i>Manage Advertise</a></li>
+{{--                        @endcan--}}
+                    </ul>
+               </li>
+
+                @can('profile.create', auth()->user())
+                <li class="treeview menu-open">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>Notice</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+
+
+                        @if(\App\Models\Notice::find(1))
+
+                            <li><a href="{{ route('notice.show', 1) }}"><i class="fa fa-circle-o"></i>Manage Notice</a></li>
+
+                        @else
+
+                            <li class="active"><a href="{{ route('notice.create') }}"><i class="fa fa-circle-o"></i> Create Notice</a></li>
+
+
+
+                            @endif
+                    </ul>
+               </li>
+                @endcan
 
 
                 @can('admins.create',auth()->user())
@@ -460,6 +560,7 @@
 
                     <ul class="treeview-menu">
                         @can('blogs.create', auth()->user())
+                        <li><a href="{{ route('blog-section.index') }}"><i class="glyphicon glyphicon-forward"></i> Blog Section</a></li>
                         <li><a href="{{ route('blog.create') }}"><i class="glyphicon glyphicon-forward"></i> Blog Create</a></li>
                         @endcan
                             @can('blogs.viewAny', auth()->user())

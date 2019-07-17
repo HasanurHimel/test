@@ -9,8 +9,10 @@ use App\Policies\AdminPolicy;
 use App\Policies\BlogPolicy;
 use App\Policies\CarouselPolicy;
 use App\Policies\CategoryPolicy;
+use App\Policies\NoticePolicy;
 use App\Policies\PhotographyPolicy;
 use App\Policies\ProfilePolicy;
+use App\Policies\SeoPolicy;
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use App\Policies\ProfilesPolicy;
 use App\Policies\SubCategoryPolicy;
@@ -47,6 +49,8 @@ class AuthServiceProvider extends ServiceProvider
 
         });
 
+
+
         Gate::resource('blogs', BlogPolicy::class);
         Gate::define('blogs.status', 'app\Policies\BlogPolicy@status');
         Gate::resource('admins', AdminPolicy::class);
@@ -55,6 +59,8 @@ class AuthServiceProvider extends ServiceProvider
         Gate::resource('carousels', CarouselPolicy::class);
         Gate::resource('photographies', PhotographyPolicy::class);
         Gate::resource('profile', ProfilesPolicy::class);
+        Gate::resource('seo', SeoPolicy::class);
+        Gate::resource('notice', NoticePolicy::class);
 
 
     }

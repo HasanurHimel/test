@@ -11,6 +11,7 @@ class Blog extends Model implements HasMedia
 {
     use HasMediaTrait, Notifiable;
 
+//    protected $fillable=['blog_section'];
     protected $guarded=[];
 
     public function category(){
@@ -22,5 +23,11 @@ class Blog extends Model implements HasMedia
     public function admin(){
         return $this->belongsTo(Admin::class);
     }
+    public function blogSection(){
+        return $this->belongsTo(BlogSection::class);
+    }
+
+
+
 
 }

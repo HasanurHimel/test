@@ -3,6 +3,7 @@
 
 
 Route::get('/', 'Frontend\HomeController@index')->name('/');
+Route::get('/article/{slug}', 'Frontend\HomeController@article')->name('article');
 Route::get('/detail', 'Frontend\HomeController@detail')->name('detail');
 Route::get('/test', 'TestController@index');
 
@@ -53,6 +54,20 @@ Route::group(['middleware'=> 'auth', 'namespace'=>'Backend'] ,function(){
 
     Route::resource('permission-for', 'PermissionForController');
     Route::get('permission-for/destroy/{id}', 'PermissionForController@destroy')->name('permission-for.destroy');
+
+    Route::resource('seo', 'SeoController');
+
+    Route::resource('notice', 'NoticeController');
+
+    Route::resource('ad-position', 'AdPositionController');
+    Route::get('ad-position/delete/{id}', 'AdPositionController@delete')->name('ad-position.delete');
+
+    Route::resource('advertise', 'AdvertiseController');
+    Route::get('advertise/delete/{id}', 'AdvertiseController@delete')->name('advertise.delete');
+
+
+    Route::resource('blog-section', 'BlogSectionController');
+    Route::get('blog-section/delete/{id}', 'BlogSectionController@delete')->name('blog-section.delete');
 });
 
 

@@ -140,6 +140,17 @@
 
                                     </div>
 
+                                    <div class="form-group">
+                                        <label>Blog Section</label>
+                                        <div class="radio">
+                                            @foreach($blogSections as $blogSection)
+                                                <label><input type="radio" {{ $blog->blog_section_id==$blogSection->id ?'checked':'' }} name="blog_section_id" value="{{ $blogSection->id }}" class="flat-red">{{ $blogSection->name }}</label>
+                                            @endforeach
+
+                                        </div>
+
+                                    </div>
+
 
                                     @can('blogs.status', auth()->user())
                                     <div class="row">
