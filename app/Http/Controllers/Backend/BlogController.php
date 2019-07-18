@@ -116,7 +116,7 @@ class BlogController extends Controller
             catch (\Exception $e) {
                 $this->setWarning('Please valid input');
             }
-            $blog->addMedia($request->file('blog_image'))->toMediaCollection('blog');
+			$blog->addMedia($request->file('blog_image'))->toMediaCollection('blog');
 
 
 
@@ -170,7 +170,7 @@ class BlogController extends Controller
 
     public function update(Request $request, $id)
     {
-        
+        //return $request->all();
             $validator = Validator::make($request->all(), [
                 'category_id' => 'required',
                 'blog_title' => 'required|min:5|max:120',
@@ -185,10 +185,10 @@ class BlogController extends Controller
 
 
             $blog = Blog::find($id);
-
-            try {
-
-                $blog->update([
+			
+		
+				$request->thumbnail ? : $request['thumbnail']=0;
+           $blog->update([
                     'admin_id' => auth()->user()->id,
                     'category_id' => $request->input('category_id'),
                     'sub_category_id' => $request->input('subcategory_id'),
@@ -202,13 +202,8 @@ class BlogController extends Controller
                     'publication_status' => $request->input('publication_status'),
 
                 ]);
-
-
-            } catch (\Exception $e) {
-                $this->setWarning('Please valid input');
-            }
-
-
+		   
+		   
             if ($request->file('blog_image')) {
                 $existingImage = Media::where('model_id', $id)
                     ->where('collection_name', 'blog')

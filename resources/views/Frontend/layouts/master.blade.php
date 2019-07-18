@@ -11,6 +11,11 @@
 
 </head>
 <body>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3&appId=901805713515915&autoLogAppEvents=1"></script>
+
+
 <div id="preloader">
     <div id="status">&nbsp;</div>
 </div>

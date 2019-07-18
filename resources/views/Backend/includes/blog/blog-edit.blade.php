@@ -127,7 +127,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Blog long description</label>
-                                                <textarea name="blog_long_description" id="summary-ckeditor" class="form-control" rows="20" placeholder="Enter ...">{{ $blog->blog_long_description }}</textarea>
+                                                <textarea name="blog_long_description" id="summary-ckeditor" class="form-control" rows="50" placeholder="Enter ...">{{ $blog->blog_long_description }}</textarea>
                                             </div>
                                         </div>
                                     </div>
