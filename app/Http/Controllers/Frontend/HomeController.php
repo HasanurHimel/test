@@ -23,9 +23,21 @@ class HomeController extends Controller
             ->orderBy('id', 'DESC')
             ->get();
 
+        $data['left_sections']=Blog::where('publication_status', 1)
+            ->where('blog_section_id',2 )
+            ->orderBy('id', 'DESC')
+            ->get();
+        $data['right_sections']=Blog::where('publication_status', 1)
+            ->where('blog_section_id',3 )
+            ->orderBy('id', 'DESC')
+            ->get();
+
 
         return view('Frontend.includes.homepage.homepage', $data);
     }
+
+
+
 
     public function article($slug){
         $article=Blog::where('slug', $slug)->first();

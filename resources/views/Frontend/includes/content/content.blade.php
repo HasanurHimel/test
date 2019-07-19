@@ -3,6 +3,9 @@
 
 @section('content')
 
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3&appId=901805713515915&autoLogAppEvents=1"></script>
+
 
 
     <section id="contentSection">
@@ -22,16 +25,14 @@
                     <h1>{{ $article->blog_title }}</h1>
                     <div class="post_commentbox"> <a href="#"><i class="fa fa-user"></i>{{ $article->author_name }}</a> <span><i class="fa fa-calendar"></i>{{ $article->created_at->toFormattedDateString() }}</span>
 
+                        <div class="fb-like pull-right" data-href="{{ Request::url() }}" data-width="50" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+
 
                     </div>
 
                     <div class="single_page_content line-numbers">
                         <p>{!! $article->blog_long_description !!} </p>
 
-
-{{--                        <div class="fb-share-button pull-right" data-href="{{ Request::url() }}" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F127.0.0.1%3A8000%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>--}}
-
-                        <div class="fb-like pull-right" data-href="{{ Request::url() }}" data-width="50" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
                     </div>
 
 
