@@ -1,6 +1,8 @@
 @extends('Frontend.layouts.master')
 
-
+@section('title')
+    {{ $article->blog_title }}
+@endsection
 @section('content')
 
     <div id="fb-root"></div>
