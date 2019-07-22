@@ -356,7 +356,12 @@
                 </div>
                 <div class="pull-left info">
                     <p>{{ Auth::user()->name }}</p>
+                    @foreach(auth()->user()->roles as $role)
+                        <small ><i class="text-success"></i> {{ $role->name }}</small><br><br>
+                    @endforeach
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+
+
                 </div>
             </div>
             <!-- search form -->
