@@ -2,11 +2,13 @@
 
 namespace App\Providers;
 
+use function foo\func;
 use Illuminate\Support\ServiceProvider;
 use Schema;
 use App\Models\Category;
 use App\Models\SubCategory;
 use View;
+use Cache;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,8 +25,8 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot()
     {
+
         Schema::defaultStringLength(190);
-        view::share('categories', category::where('publication_status', 1)->get());
-        view::share('sub_categories', SubCategory::where('publication_status', 1)->get());
+        view::share('categories', Cache::get('categories', function (){ Category::with('subCategories')->where('publication_status', 1)->orderBy('id', 'DESC')->take(6)->get(); }));
     }
 }

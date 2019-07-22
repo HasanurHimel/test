@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use App\Events\CreateEvent;
+use App\Events\DeleteEvent;
+use App\Events\UpdateEvent;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\FileManipulator;
 use Spatie\MediaLibrary\Models\Media as BaseMedia;
@@ -9,6 +12,12 @@ use Spatie\MediaLibrary\Helpers\File;
 
 class Media extends BaseMedia
 {
+
+    protected $dispatchesEvents = [
+        'created' => CreateEvent::class,
+        'updated' => UpdateEvent::class,
+        'deleted' => DeleteEvent::class,
+    ];
 
     public function updateFile($newFile) {
         $fileName        = $newFile->getClientOriginalName();

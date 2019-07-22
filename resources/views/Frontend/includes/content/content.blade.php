@@ -25,13 +25,16 @@
                     <h1>{{ $article->blog_title }}</h1>
                     <div class="post_commentbox"> <a href="#"><i class="fa fa-user"></i>{{ $article->author_name }}</a> <span><i class="fa fa-calendar"></i>{{ $article->created_at->toFormattedDateString() }}</span>
 
-                        <div class="fb-like pull-right" data-href="{{ Request::url() }}" data-width="50" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
-
 
                     </div>
 
                     <div class="single_page_content line-numbers">
                         <p>{!! $article->blog_long_description !!} </p>
+
+
+{{--                        <div class="fb-share-button pull-right" data-href="{{ Request::url() }}" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F127.0.0.1%3A8000%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>--}}
+
+                        <div class="fb-like pull-right" data-href="{{ Request::url() }}" data-width="50" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
 
                     </div>
 
@@ -82,26 +85,19 @@
                     <div class="single_sidebar">
                         <h2><span>Related Post</span></h2>
                         <ul class="spost_nav">
+
+{{--                            @dd($article->id)--}}
+                            @foreach($related_posts->take(5) as $related_post)
+
+                                @if($article->id !== $related_post->id)
                             <li>
-                                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="{{ asset('/') }}frontend/images/post_img1.jpg"> </a>
-                                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a> </div>
+                                <div class="media wow fadeInDown"> <a href="{{ route('article', $related_post->slug) }}" class="media-left"> <img alt="" src="{{ $related_post->getFirstMediaUrl('blog') }}"> </a>
+                                    <div class="media-body"> <a href="{{ route('article', $related_post->slug) }}" class="catg_title"> {{ $related_post->blog_title }}</a> </div>
                                 </div>
                             </li>
-                            <li>
-                                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="{{ asset('/') }}frontend/images/post_img2.jpg"> </a>
-                                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="{{ asset('/') }}frontend/images/post_img1.jpg"> </a>
-                                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a> </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="{{ asset('/') }}frontend/images/post_img2.jpg"> </a>
-                                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 4</a> </div>
-                                </div>
-                            </li>
+
+                                @endif
+                            @endforeach
                         </ul>
                     </div>
 

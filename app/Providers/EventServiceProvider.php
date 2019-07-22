@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Events\CreateEvent;
+use App\Events\DeleteEvent;
+use App\Events\UpdateEvent;
+use App\Listeners\CacheListener;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -15,9 +19,9 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        Registered::class => [
-            SendEmailVerificationNotification::class,
-        ],
+        CreateEvent::class => [CacheListener::class],
+        UpdateEvent::class => [CacheListener::class],
+        DeleteEvent::class => [CacheListener::class],
     ];
 
     /**

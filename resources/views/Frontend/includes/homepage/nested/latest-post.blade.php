@@ -4,33 +4,17 @@
         <div class="latest_post_container">
             <div id="prev-button"><i class="fa fa-chevron-up"></i></div>
             <ul class="latest_postnav">
+
+                @foreach($blogs->take(5) as $latest_post)
                 <li>
-                    <div class="media"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="{{ asset('/') }}frontend/images/post_img1.jpg"> </a>
-                        <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a> </div>
+                    <div class="media"> <a href="{{ route('article', $latest_post->slug) }}" class="media-left"> <img alt="" src="{{ $latest_post->getFirstMediaUrl('blog') }} "> </a>
+                        <div class="media-body"> <a href="{{ route('article', $latest_post->slug) }}" class="catg_title">  {{  $latest_post->blog_title }}</a> </div>
                     </div>
                 </li>
-                <li>
-                    <div class="media"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="{{ asset('/') }}frontend/images/post_img1.jpg"> </a>
-                        <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="media"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="{{ asset('/') }}frontend/images/post_img1.jpg"> </a>
-                        <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a> </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="media"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="{{ asset('/') }}frontend/images/post_img1.jpg"> </a>
-                        <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 4</a> </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="media"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="{{ asset('/') }}frontend/images/post_img1.jpg"> </a>
-                        <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>
-                    </div>
-                </li>
+                @endforeach
             </ul>
             <div id="next-button"><i class="fa  fa-chevron-down"></i></div>
         </div>
     </div>
 </div>
+

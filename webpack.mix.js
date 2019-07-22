@@ -8,7 +8,6 @@ mix.styles([
     'resources/css/font.css',
     'resources/css/li-scroller.css',
     'resources/css/slick.css',
-    'resources/css/jquery-fancybox.css',
     'resources/css/theme.css',
     'resources/css/style.css',
     'resources/css/prism.css',

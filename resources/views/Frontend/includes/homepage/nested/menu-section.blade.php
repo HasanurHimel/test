@@ -10,14 +10,16 @@
                 @foreach($categories as $category)
                 <li class="dropdown"> <a href="{{ $category->id }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ $category->category_name }}</a>
                     @foreach($category->subCategories as $subCategory)
-                        @if($subCategory->id!==NULL)
+                        @if($subCategory->id !== NULL)
+
                             <ul class="dropdown-menu" role="menu">
                                 @foreach($category->subCategories as $sub_category)
                                     <li><a href="{{ $sub_category->id }}">{{ $sub_category->subcategory_name }}</a></li>
                                     <br>
                                 @endforeach
                             </ul>
-                            @endif
+                        @endif
+
                         @endforeach
                 </li>
                     @endforeach
