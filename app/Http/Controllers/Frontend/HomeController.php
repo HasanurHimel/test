@@ -61,17 +61,17 @@ class HomeController extends Controller
         $data['article']=cache()->get('blogs')->where('slug', $slug)->first();
 //        $data['article']=Blog::where('slug', $slug)->first();
 
+
         $blog_id='blog_'.$data['article']->id;
 
 
-
-          if (!Session::has($blog_id)){
+          if (!session()->has($blog_id)){
 
 //              return 'ok';
               $data['article']->increment('view_count');
 
-              Session::put($blog_id, 1);
-              Session::save();
+              session()->put($blog_id, 1);
+              session()->save();
 
           }
 
@@ -82,9 +82,6 @@ class HomeController extends Controller
 
 
             return view('Frontend.includes.content.content', $data);
-
-
-
 
 
 //        dd($data['article']->id);
