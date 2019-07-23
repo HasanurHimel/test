@@ -201,7 +201,7 @@ img:hover{opacity:0.75}
 .logo > span{ margin-left:-14px}
 .add_banner{float:right; width:728px; height:90px}
 .add_banner img{width:100%; height:100%}
-#navArea{float:left; display:inline; width:100%; padding:0 30px; background-color:#fff}
+#navArea{float:left; display:inline; width:100%; background-color:#fff}
 .navbar{border:medium none; border-radius:0}
 .navbar-inverse .navbar-nav > li > a{border-left:1px solid #383838; color:#ddd; font-family:'Oswald',sans-serif; display:inline-block; height:50px; line-height:50px; padding:0 14px; text-shadow:0 1px 1px #000; text-transform:uppercase; -webkit-transition:all 0.5s; -mz-transition:all 0.5s; -ms-transition:all 0.5s; -o-transition:all 0.5s; transition:all 0.5s}
 .navbar-inverse .navbar-nav > li:first-child a{border:none}
@@ -214,7 +214,7 @@ img:hover{opacity:0.75}
 .dropdown-menu{background-color:#222}
 .dropdown-menu > li > a{clear:both; color:#ddd; background-color:#222; padding:10px 20px; font-family:'Oswald',sans-serif; -webkit-transition:all 0.5s; -mz-transition:all 0.5s; -ms-transition:all 0.5s; -o-transition:all 0.5s; transition:all 0.5s}
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{color:#fff}
-#newsSection{float:left; display:inline; width:100%; padding:0 30px; background-color:#fff; padding-bottom:20px}
+#newsSection{float:left; display:inline; width:100%;background-color:#fff; padding-bottom:20px}
 .latest_newsarea{float:left; display:inline; width:100%; background-color:#000; position:relative}
 .latest_newsarea span{ color:#fff; font-family:Oswald,sans-serif; font-size:15px; left:0; line-height:1.8em; margin-right:20px; overflow:hidden; padding:2px 18px 1px 19px; position:absolute; z-index:15}
 .social_area{ position:absolute; right:0; top:0; background:#fff; border-top:1px solid #ccc; border-bottom:1px solid #ccc; border-right:1px solid #ccc; height:31px}
@@ -236,7 +236,7 @@ img:hover{opacity:0.75}
 .social_nav li.youtube a:hover{ background-position:-180px 0px; background-size:270px 60px; background-color:#e32114}
 .social_nav li.mail a{ background-image:url("http://127.0.0.1:8000/images/socials.png"); background-position:-240px -30px; background-size:270px 60px; width:32px}
 .social_nav li.mail a:hover{background-position:-240px 0px; background-size:270px 60px; background-color:#bc75d6}
-#sliderSection{background-color:#fff; display:inline; float:left; width:100%; padding:0 30px}
+#sliderSection{background-color:#fff;padding:0 10px; display:inline;float:left; width:100%;}
 .single_iteam{display:inline; float:left; position:relative; width:100%; height:448px}
 .single_iteam img{width:100%; height:100%}
 .single_iteam img:hover{opacity:1}
@@ -258,7 +258,7 @@ img:hover{opacity:0.75}
 .latest_post_container:hover #prev-button, .latest_post_container:hover #next-button{display:block}
 #prev-button{cursor:pointer; font-size:20px; left:0; position:absolute; text-align:center; top:-10px; width:100%; display:none}
 #next-button{cursor:pointer; display:none; font-size:20px; left:0; position:absolute; text-align:center; bottom:0; width:100%}
-#contentSection{float:left; display:inline; width:100%; background-color:#fff; padding:0 30px}
+#contentSection{float:left; display:inline; width:100%;padding:0 10px; background-color:#fff;}
 .left_content{float:left; display:inline; width:100%}
 .single_post_content{float:left; display:inline; width:100%; margin-bottom:20px}
 .single_post_content > h2{background:none repeat scroll 0 0 #2c7d0a; color:#e7f195; font-family:'Oswald',sans-serif; font-size:18px; font-weight:400; margin-bottom:10px; margin-left:0; margin-top:5px; padding:0; position:relative; text-align:center; text-transform:uppercase; margin-bottom:20px}
@@ -355,7 +355,7 @@ a, .pagination > li:last-child > span{border-bottom-right-radius:0; border-top-r
 .post_commentbox a > i, .post_commentbox span > i{margin-right:5px}
 .breadcrumb{background-color:#2e860a; border-radius:0}
 .breadcrumb li a{color:#fff}
-.single_page_content{display:inline; float:left; padding-top:20px; width:100%; border-bottom:1px solid #ddd; padding-bottom:20px}
+/*.single_page_content{display:inline; float:left; padding-top:20px; width:100%; border-bottom:1px solid #ddd; padding-bottom:5px}*/
 .single_page_content > img{max-width:100%; width:320px; height:213px; margin-bottom:15px}
 .single_page_content ul{position:relative; padding-left:25px}
 .single_page_content ul li{line-height:25px}

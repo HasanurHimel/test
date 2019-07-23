@@ -20,7 +20,7 @@
     <div id="status">&nbsp;</div>
 </div>
 <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
-<div class="container">
+<div class="col-sm-12 col-md-12 col-lg-12">
 
 
     @include('Frontend.includes.homepage.nested.header-section')
