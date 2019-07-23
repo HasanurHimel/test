@@ -423,6 +423,7 @@
                     </ul>
                </li>
 
+                @can('advertise.create', auth()->user())
                 <li class="treeview menu-open">
                     <a href="#">
                         <i class="fa fa-dashboard"></i> <span>Advertise</span>
@@ -443,7 +444,9 @@
                     </ul>
                </li>
 
-                @can('profile.create', auth()->user())
+                @endcan
+
+                @can('notice.create', auth()->user())
                 <li class="treeview menu-open">
                     <a href="#">
                         <i class="fa fa-dashboard"></i> <span>Notice</span>
