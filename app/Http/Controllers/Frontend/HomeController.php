@@ -61,30 +61,23 @@ class HomeController extends Controller
         $data['article']=cache()->get('blogs')->where('slug', $slug)->first();
 //        $data['article']=Blog::where('slug', $slug)->first();
 
-        $blog_id='blog_'.$data['article']->id;
+        $blog_key='blog_' . $data['article']->id;
 
+//        Session::put('blog_key', $blog_key);
+//        dd(session()->get($blog_key));
 
-
-          if (!Session::has($blog_id)){
-
-//              return 'ok';
+          if (!session()->has('blog_key')) {
               $data['article']->increment('view_count');
-
-              Session::put($blog_id, 1);
-              Session::save();
+              session()->put($blog_key, 1);
+              session()->save();
 
           }
-
 
         $data['related_posts']=cache()
             ->get('blogs')
             ->where('category_id', $data['article']->category_id);
 
-
             return view('Frontend.includes.content.content', $data);
-
-
-
 
 
 //        dd($data['article']->id);
