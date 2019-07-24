@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>NewsFeed</title>
+    <title> @yield('title') </title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,13 +41,9 @@
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="category">
                                 <ul>
-                                    <li class="cat-item"><a href="#">Sports</a></li>
-                                    <li class="cat-item"><a href="#">Fashion</a></li>
-                                    <li class="cat-item"><a href="#">Business</a></li>
-                                    <li class="cat-item"><a href="#">Technology</a></li>
-                                    <li class="cat-item"><a href="#">Games</a></li>
-                                    <li class="cat-item"><a href="#">Life &amp; Style</a></li>
-                                    <li class="cat-item"><a href="#">Photography</a></li>
+                                    @foreach($categories as $category)
+                                    <li class="cat-item"><a href="#">{{ $category->category_name }}</a></li>
+                                   @endforeach
                                 </ul>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="video">
@@ -82,16 +78,16 @@
                         </div>
                     </div>
                     <div class="single_sidebar wow fadeInDown">
-                        <h2><span>Sponsor</span></h2>
-                        <a class="sideAdd" href="#"><img src="{{ asset('/') }}frontend/images/add_img.jpg" alt=""></a> </div>
+                        <h2><span>Site Owner</span></h2>
+                        <a class="sideAdd" href="#"><img src="{{ asset('/') }}frontend/images/himel.jpg" alt=""></a> </div>
                     <div class="single_sidebar wow fadeInDown">
                         <h2><span>Category Archive</span></h2>
                         <select class="catgArchive">
                             <option>Select Category</option>
-                            <option>Life styles</option>
-                            <option>Sports</option>
-                            <option>Technology</option>
-                            <option>Treads</option>
+                            @foreach($categories as $category)
+                            <option>{{ $category->category_name }}</option>
+                            @endforeach
+
                         </select>
                     </div>
                     <div class="single_sidebar wow fadeInDown">
@@ -119,14 +115,11 @@
                     <div class="footer_widget wow fadeInDown">
                         <h2>Tag</h2>
                         <ul class="tag_nav">
-                            <li><a href="#">Games</a></li>
-                            <li><a href="#">Sports</a></li>
-                            <li><a href="#">Fashion</a></li>
-                            <li><a href="#">Business</a></li>
-                            <li><a href="#">Life &amp; Style</a></li>
-                            <li><a href="#">Technology</a></li>
-                            <li><a href="#">Photo</a></li>
-                            <li><a href="#">Slider</a></li>
+
+                            @foreach($categories as $category)
+                            <li><a href="">{{ $category->category_name }}</a></li>
+
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -143,7 +136,7 @@
         </div>
         <div class="footer_bottom">
             <p class="copyright">Copyright &copy; 2045 <a href="index.html">NewsFeed</a></p>
-            <p class="developer">Developed By Wpfreeware</p>
+            <p class="developer">Developed By Himel</p>
         </div>
     </footer>
 </div>

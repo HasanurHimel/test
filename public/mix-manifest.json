@@ -1,5 +1,10 @@
 {
+<<<<<<< HEAD
     "/css/app.css": "/css/app.css?id=15f8bf3791ddaef7dabe",
     "/css/all.css": "/css/all.css?id=d51f5acd388f405a7f61",
     "/js/all.js": "/js/all.js?id=ad18d71987a5fa893c45"
+=======
+    "/css/all.css": "/css/all.css?id=74c957bec1fd5dccff00",
+    "/js/all.js": "/js/all.js?id=34c7d238e09a3cebd17d"
+>>>>>>> 7fbb49481a15f0b09b0321754fdebe4fe3d84d2c
 }

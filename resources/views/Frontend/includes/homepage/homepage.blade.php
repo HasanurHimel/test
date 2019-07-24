@@ -1,5 +1,7 @@
 @extends('Frontend.layouts.master')
-
+@section('title')
+    Himel | Blog site
+    @endsection
 
 @section('content')
 
