@@ -424,7 +424,10 @@
                </li>
 
                 @can('advertise.create', auth()->user())
+<<<<<<< HEAD
 
+=======
+>>>>>>> 72bebc7e15e22ee47b837812f9d9c4c6b556f2ab
                 <li class="treeview menu-open">
                     <a href="#">
                         <i class="fa fa-dashboard"></i> <span>Advertise</span>

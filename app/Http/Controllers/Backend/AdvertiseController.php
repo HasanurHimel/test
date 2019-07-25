@@ -13,6 +13,10 @@ class AdvertiseController extends Controller
 
     public function __construct()
     {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 72bebc7e15e22ee47b837812f9d9c4c6b556f2ab
         $this->middleware('can:advertise.create');
     }
 

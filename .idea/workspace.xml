@@ -49,6 +49,58 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
 <<<<<<< HEAD
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/Backend/layouts/master.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="268">
+              <caret line="448" column="28" selection-start-line="448" selection-start-column="28" selection-end-line="448" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/AdvertiseController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/BlogController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4569">
+              <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Policies/AdvertisePolicy.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="64" column="33" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="33" />
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/Frontend/layouts/master.blade.php">
@@ -78,6 +130,7 @@
             <state relative-caret-position="342">
               <caret line="359" column="94" selection-start-line="359" selection-start-column="94" selection-end-line="359" selection-end-column="94" />
 >>>>>>> 7fbb49481a15f0b09b0321754fdebe4fe3d84d2c
+>>>>>>> 65144cd13ee3dd71096a4845d9e5943b5dd6d870
             </state>
           </provider>
         </entry>
@@ -95,12 +148,15 @@
   <component name="FindInProjectRecents">
     <findStrings>
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
 >>>>>>> 7fbb49481a15f0b09b0321754fdebe4fe3d84d2c
       <find>$blog</find>
 >>>>>>> 7fbb49481a15f0b09b0321754fdebe4fe3d84d2c
+>>>>>>> 65144cd13ee3dd71096a4845d9e5943b5dd6d870
       <find>$category</find>
       <find>$role</find>
       <find>Role</find>
@@ -138,7 +194,11 @@
 >>>>>>> 7fbb49481a15f0b09b0321754fdebe4fe3d84d2c
 =======
       <find>online</find>
+<<<<<<< HEAD
+      <find>single_page_content</find>
+=======
 >>>>>>> 7fbb49481a15f0b09b0321754fdebe4fe3d84d2c
+>>>>>>> 65144cd13ee3dd71096a4845d9e5943b5dd6d870
     </findStrings>
     <replaceStrings>
       <replace>{{ asset(/) }}Frontend/images/</replace>
@@ -173,6 +233,8 @@
       <list>
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
         <option value="$PROJECT_DIR$/resources/views/Backend/includes/advertise/edit-advertise.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Frontend/includes/homepage/nested/carousel-and-latest-section.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Frontend/includes/homepage/nested/main-div.blade.php" />
@@ -180,6 +242,7 @@
         <option value="$PROJECT_DIR$/resources/views/Frontend/includes/homepage/nested/header-section.blade.php" />
 >>>>>>> 7fbb49481a15f0b09b0321754fdebe4fe3d84d2c
         <option value="$PROJECT_DIR$/resources/views/Frontend/includes/homepage/nested/carousel.blade.php" />
+>>>>>>> 65144cd13ee3dd71096a4845d9e5943b5dd6d870
         <option value="$PROJECT_DIR$/database/migrations/2019_07_12_231243_create_blog_sections_table.php" />
         <option value="$PROJECT_DIR$/resources/views/Backend/includes/blog/blog-section/section-manage.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Backend/includes/blog/blog-section/section-create.blade.php" />
@@ -194,6 +257,8 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/BlogController.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
         <option value="$PROJECT_DIR$/database/seeds/BlogSectionTableSeeder.php" />
 =======
@@ -201,6 +266,7 @@
 =======
 >>>>>>> 7fbb49481a15f0b09b0321754fdebe4fe3d84d2c
         <option value="$PROJECT_DIR$/resources/sass/app.scss" />
+>>>>>>> 65144cd13ee3dd71096a4845d9e5943b5dd6d870
         <option value="$PROJECT_DIR$/node_modules/fancybox/jquery.fancybox.css" />
         <option value="$PROJECT_DIR$/webpack.mix.js" />
         <option value="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" />
@@ -239,15 +305,25 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/database/seeds/BlogSectionTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" />
-        <option value="$PROJECT_DIR$/resources/views/Frontend/layouts/master.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Frontend/includes/homepage/homepage.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/Frontend/includes/content/content.blade.php" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
+        <option value="$PROJECT_DIR$/resources/sass/app.scss" />
+        <option value="$PROJECT_DIR$/resources/views/Frontend/layouts/master.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Frontend/includes/content/content.blade.php" />
+        <option value="$PROJECT_DIR$/resources/css/style.css" />
+        <option value="$PROJECT_DIR$/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php" />
+        <option value="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
+        <option value="$PROJECT_DIR$/app/Policies/AdvertisePolicy.php" />
         <option value="$PROJECT_DIR$/resources/views/Backend/layouts/master.blade.php" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/AdvertiseController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/NoticeController.php" />
+=======
 <<<<<<< HEAD
 >>>>>>> 7fbb49481a15f0b09b0321754fdebe4fe3d84d2c
 =======
 >>>>>>> 7fbb49481a15f0b09b0321754fdebe4fe3d84d2c
+>>>>>>> 65144cd13ee3dd71096a4845d9e5943b5dd6d870
       </list>
     </option>
   </component>
@@ -479,6 +555,11 @@
               <item name="test" type="b2602c69:ProjectViewProjectNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Backend" type="462c0819:PsiDirectoryNode" />
+=======
               <item name="Providers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -493,10 +574,15 @@
 <<<<<<< HEAD
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Providers" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 65144cd13ee3dd71096a4845d9e5943b5dd6d870
             </path>
             <path>
               <item name="test" type="b2602c69:ProjectViewProjectNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Models" type="462c0819:PsiDirectoryNode" />
+=======
               <item name="database" type="462c0819:PsiDirectoryNode" />
 >>>>>>> 7fbb49481a15f0b09b0321754fdebe4fe3d84d2c
             </path>
@@ -506,23 +592,26 @@
 =======
 >>>>>>> 7fbb49481a15f0b09b0321754fdebe4fe3d84d2c
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 65144cd13ee3dd71096a4845d9e5943b5dd6d870
             </path>
             <path>
               <item name="test" type="b2602c69:ProjectViewProjectNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Policies" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="test" type="b2602c69:ProjectViewProjectNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Backend" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Providers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="test" type="b2602c69:ProjectViewProjectNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+=======
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="Backend" type="462c0819:PsiDirectoryNode" />
@@ -544,6 +633,7 @@
               <item name="my-blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="my-blog" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 65144cd13ee3dd71096a4845d9e5943b5dd6d870
             </path>
 =======
 >>>>>>> 7fbb49481a15f0b09b0321754fdebe4fe3d84d2c
@@ -681,11 +771,18 @@
 =======
       <workItem from="1563774403853" duration="5037000" />
       <workItem from="1563780195608" duration="3826000" />
+<<<<<<< HEAD
+      <workItem from="1563852292243" duration="5250000" />
+=======
 >>>>>>> 7fbb49481a15f0b09b0321754fdebe4fe3d84d2c
+>>>>>>> 65144cd13ee3dd71096a4845d9e5943b5dd6d870
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="536222000" />
+=======
 <<<<<<< HEAD
 <<<<<<< HEAD
     <option name="totallyTimeSpent" value="538509000" />
@@ -695,6 +792,7 @@
 =======
     <option name="totallyTimeSpent" value="530972000" />
 >>>>>>> 7fbb49481a15f0b09b0321754fdebe4fe3d84d2c
+>>>>>>> 65144cd13ee3dd71096a4845d9e5943b5dd6d870
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -715,6 +813,9 @@
 =======
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
+<<<<<<< HEAD
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18283582" />
+=======
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18123667" />
 >>>>>>> 7fbb49481a15f0b09b0321754fdebe4fe3d84d2c
 =======
@@ -722,6 +823,7 @@
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18123667" />
 >>>>>>> 7fbb49481a15f0b09b0321754fdebe4fe3d84d2c
+>>>>>>> 65144cd13ee3dd71096a4845d9e5943b5dd6d870
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -737,6 +839,9 @@
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3297546" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
 <<<<<<< HEAD
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.42795232" />
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
       <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.5368098" />
 =======
@@ -745,6 +850,7 @@
 =======
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.78656554" />
 >>>>>>> 7fbb49481a15f0b09b0321754fdebe4fe3d84d2c
+>>>>>>> 65144cd13ee3dd71096a4845d9e5943b5dd6d870
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -833,6 +939,8 @@
   </component>
   <component name="editorHistoryManager">
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -902,6 +1010,7 @@
         </state>
       </provider>
     </entry>
+>>>>>>> 65144cd13ee3dd71096a4845d9e5943b5dd6d870
     <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5312" />
@@ -1289,6 +1398,8 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
     <entry file="file://$PROJECT_DIR$/resources/views/Frontend/includes/content/content.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="55">
@@ -1307,6 +1418,7 @@
         </state>
       </provider>
     </entry>
+>>>>>>> 65144cd13ee3dd71096a4845d9e5943b5dd6d870
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -1370,6 +1482,37 @@
       </provider>
     </entry>
 <<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/resources/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="51" column="62" selection-start-line="51" selection-start-column="62" selection-end-line="51" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Frontend/includes/content/content.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="28" column="216" selection-start-line="28" selection-start-column="216" selection-end-line="28" selection-end-column="216" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Frontend/layouts/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Policies/CategoryPolicy.php">
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/resources/views/Frontend/includes/homepage/nested/header-section.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1389,20 +1532,82 @@
 =======
 >>>>>>> 7fbb49481a15f0b09b0321754fdebe4fe3d84d2c
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
+>>>>>>> 65144cd13ee3dd71096a4845d9e5943b5dd6d870
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/AuthServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="64" column="33" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Policies/AdvertisePolicy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Backend/layouts/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="268">
+          <caret line="448" column="28" selection-start-line="448" selection-start-column="28" selection-end-line="448" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/CategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/NoticeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/AdvertiseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/BlogController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4569">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+=======
         <state relative-caret-position="342">
           <caret line="359" column="94" selection-start-line="359" selection-start-column="94" selection-end-line="359" selection-end-column="94" />
 <<<<<<< HEAD
 >>>>>>> 7fbb49481a15f0b09b0321754fdebe4fe3d84d2c
 =======
 >>>>>>> 7fbb49481a15f0b09b0321754fdebe4fe3d84d2c
+>>>>>>> 65144cd13ee3dd71096a4845d9e5943b5dd6d870
         </state>
       </provider>
     </entry>
