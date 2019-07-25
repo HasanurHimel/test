@@ -26,23 +26,14 @@ class AdvertiseController extends Controller
         return view('Backend.includes.advertise.manage-advertise', compact('advertises'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         $positions=AdPosition::orderBy('position', 'DESC')->get();
         return view('Backend.includes.advertise.create-advertise', compact('positions'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
 

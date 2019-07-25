@@ -46,47 +46,26 @@ class HomeController extends Controller
 
         $data['popular_posts']=cache()->get('blogs')->sortByDesc('view_count')->take(5);
 
-//        $data['popular_posts']=Blog::orderBy('view_count', 'DESC')->take(5)->get();
-//        dd($data['popular_posts']);
-
         return view('Frontend.includes.homepage.homepage', $data);
     }
-
-
-
 
     public function article($slug){
         $data=[];
 
         $data['article']=cache()->get('blogs')->where('slug', $slug)->first();
-//        $data['article']=Blog::where('slug', $slug)->first();
-
-
+//
         $blog_id='blog_'.$data['article']->id;
 
-
           if (!session()->has($blog_id)){
-
-//              return 'ok';
               $data['article']->increment('view_count');
-
               session()->put($blog_id, 1);
               session()->save();
-
           }
-
 
         $data['related_posts']=cache()
             ->get('blogs')
             ->where('category_id', $data['article']->category_id);
-
-
             return view('Frontend.includes.content.content', $data);
-
-
-//        dd($data['article']->id);
-//        dd($data['popular_posts']);
-
     }
 
     public function admin(){
