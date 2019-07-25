@@ -27,9 +27,12 @@
                     <h1>{{ $article->blog_title }}</h1>
                     <div class="post_commentbox"> <a href="#"><i class="fa fa-user"></i>{{ $article->author_name }}</a> <span><i class="fa fa-calendar"></i>{{ $article->created_at->toFormattedDateString() }}</span>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                         <div class="fb-like pull-right" data-href="{{ Request::url() }}" data-width="50" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
 =======
+=======
+>>>>>>> 72bebc7e15e22ee47b837812f9d9c4c6b556f2ab
                         <div class="fb-like pull-right" data-href="{{ Request::url() }}" data-width="50" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
 
 >>>>>>> 72bebc7e15e22ee47b837812f9d9c4c6b556f2ab
@@ -42,7 +45,11 @@
 {{--                        <div class="fb-share-button pull-right" data-href="{{ Request::url() }}" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F127.0.0.1%3A8000%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>--}}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+{{--                        <div class="fb-like pull-right" data-href="{{ Request::url() }}" data-width="50" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>--}}
+>>>>>>> 72bebc7e15e22ee47b837812f9d9c4c6b556f2ab
 =======
 {{--                        <div class="fb-like pull-right" data-href="{{ Request::url() }}" data-width="50" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>--}}
 >>>>>>> 72bebc7e15e22ee47b837812f9d9c4c6b556f2ab
