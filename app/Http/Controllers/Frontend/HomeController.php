@@ -20,17 +20,15 @@ class HomeController extends Controller
 //
 //$data=Cache::get('media');
 //dd($data);
+//        dd(session()->get('media', function (){ Media::all(); }));
+//        dd(cache()->get('media'));
+
         $data=[];
         $data['carousels']=cache()->get('carousels', function (){
             Carousel::where('publication_status', 1)
             ->orderBy('id', 'DESC')
             ->get();
         });
-
-        $data['media']=cache()->get('media', function (){
-           Media::all();
-        });
-
 
         $data['blogs']=cache()->get('blogs', function (){
             Blog::where('publication_status', 1)

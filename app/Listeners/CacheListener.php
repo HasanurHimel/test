@@ -41,7 +41,8 @@ class CacheListener
         Cache::forget('photographies');
 
 //        $data=[];
-        $media=\Spatie\MediaLibrary\Models\Media::all();
+        $media=Media::all();
+
         $blogs=Blog::with('category')
             ->where('publication_status', 1)
             ->select('id', 'category_id', 'blog_title', 'slug', 'blog_short_description', 'blog_long_description','author_name', 'thumbnail', 'blog_section_id', 'publication_status', 'created_at', 'view_count')
@@ -59,7 +60,7 @@ class CacheListener
             ->get();
 
 
-//        Cache::forever('media', $media);
+        Cache::forever('media', $media);
         Cache::forever('blogs', $blogs);
         Cache::forever('categories', $categories);
         Cache::forever('carousels', $carousels);
