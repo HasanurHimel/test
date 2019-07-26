@@ -574,8 +574,11 @@
                     </a>
 
                     <ul class="treeview-menu">
-                        @can('blogs.create', auth()->user())
+
+                        @can('blog-section', auth()->user())
                         <li><a href="{{ route('blog-section.index') }}"><i class="glyphicon glyphicon-forward"></i> Blog Section</a></li>
+                        @endcan
+                    @can('blogs.create', auth()->user())
                         <li><a href="{{ route('blog.create') }}"><i class="glyphicon glyphicon-forward"></i> Blog Create</a></li>
                         @endcan
                             @can('blogs.viewAny', auth()->user())
