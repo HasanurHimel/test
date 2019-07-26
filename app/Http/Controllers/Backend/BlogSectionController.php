@@ -9,11 +9,11 @@ use App\Http\Controllers\Controller;
 
 class BlogSectionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct()
+    {
+
+        $this->middleware('can:blog-section.create');
+    }
     public function index()
     {
         $blogSections=BlogSection::orderBy('id', 'DESC')->get();

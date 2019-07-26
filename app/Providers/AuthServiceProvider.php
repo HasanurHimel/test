@@ -8,6 +8,7 @@ use App\Models\SubCategory;
 use App\Policies\AdminPolicy;
 use App\Policies\AdvertisePolicy;
 use App\Policies\BlogPolicy;
+use App\Policies\BlogSectionPolicy;
 use App\Policies\CarouselPolicy;
 use App\Policies\CategoryPolicy;
 use App\Policies\NoticePolicy;
@@ -63,6 +64,7 @@ class AuthServiceProvider extends ServiceProvider
         Gate::resource('seo', SeoPolicy::class);
         Gate::resource('notice', NoticePolicy::class);
         Gate::resource('advertise', AdvertisePolicy::class);
+        Gate::resource('blog-section', BlogSectionPolicy::class);
 
 
     }
