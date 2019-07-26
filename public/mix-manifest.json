@@ -1,5 +1,13 @@
 {
-    "/css/app.css": "/css/app.css?id=15f8bf3791ddaef7dabe",
-    "/css/all.css": "/css/all.css?id=ae8b7ea73cdc0de9672e",
-    "/js/all.js": "/js/all.js?id=ad18d71987a5fa893c45"
+    "/css/app.css": "/css/app.css?id=fae7c36942fbefd7561b",
+<<<<<<< HEAD
+<<<<<<< HEAD
+    "/css/all.css": "/css/all.css?id=cfd52fbd61b90914eb27",
+=======
+    "/css/all.css": "/css/all.css?id=a24547a989872d6ad39a",
+>>>>>>> 72bebc7e15e22ee47b837812f9d9c4c6b556f2ab
+=======
+    "/css/all.css": "/css/all.css?id=a24547a989872d6ad39a",
+>>>>>>> 72bebc7e15e22ee47b837812f9d9c4c6b556f2ab
+    "/js/all.js": "/js/all.js?id=34c7d238e09a3cebd17d"
 }

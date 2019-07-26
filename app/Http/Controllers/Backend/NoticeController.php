@@ -10,21 +10,26 @@ use Mockery\Matcher\Not;
 
 class NoticeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    public function __construct()
+    {
+        $this->middleware('can:notice.create');
+    }
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 72bebc7e15e22ee47b837812f9d9c4c6b556f2ab
+=======
+>>>>>>> 72bebc7e15e22ee47b837812f9d9c4c6b556f2ab
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         return view('Backend.includes.notice.create-notice');

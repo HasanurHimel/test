@@ -10,11 +10,21 @@ use App\Http\Controllers\Controller;
 
 class AdvertiseController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    public function __construct()
+    {
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 72bebc7e15e22ee47b837812f9d9c4c6b556f2ab
+=======
+
+>>>>>>> 72bebc7e15e22ee47b837812f9d9c4c6b556f2ab
+        $this->middleware('can:advertise.create');
+    }
+
+
     public function index()
     {
         $advertises=Advertise::orderBy('id', 'DESC')->with('adPosition')->get();

@@ -10,85 +10,21 @@ class NoticePolicy
 {
     use HandlesAuthorization;
     
-    /**
-     * Determine whether the user can view any notices.
-     *
-     * @param  \App\Models\Admin  $user
-     * @return mixed
-     */
-    public function viewAny(Admin $user)
-    {
-        //
-    }
 
-    /**
-     * Determine whether the user can view the notice.
-     *
-     * @param  \App\Models\Admin  $user
-     * @param  \App\Notice  $notice
-     * @return mixed
-     */
-    public function view(Admin $user, Notice $notice)
-    {
-        //
-    }
-
-    /**
-     * Determine whether the user can create notices.
-     *
-     * @param  \App\Models\Admin  $user
-     * @return mixed
-     */
     public function create(Admin $user)
     {
-        //
+        foreach(auth()->user()->roles as $role){
+            foreach($role->permissions as $permission){
+                if($permission->name=='notice.crud'){
+                    return true;
+                }
+            }
+        }
+
+        return false;
+
+
     }
 
-    /**
-     * Determine whether the user can update the notice.
-     *
-     * @param  \App\Models\Admin  $user
-     * @param  \App\Notice  $notice
-     * @return mixed
-     */
-    public function update(Admin $user, Notice $notice)
-    {
-        //
-    }
 
-    /**
-     * Determine whether the user can delete the notice.
-     *
-     * @param  \App\Models\Admin  $user
-     * @param  \App\Notice  $notice
-     * @return mixed
-     */
-    public function delete(Admin $user, Notice $notice)
-    {
-        //
-    }
-
-    /**
-     * Determine whether the user can restore the notice.
-     *
-     * @param  \App\Models\Admin  $user
-     * @param  \App\Notice  $notice
-     * @return mixed
-     */
-    public function restore(Admin $user, Notice $notice)
-    {
-        //
-    }
-
-    /**
-     * Determine whether the user can permanently delete the notice.
-     *
-     * @param  \App\Models\Admin  $user
-     * @param  \App\Notice  $notice
-     * @return mixed
-     */
-    public function forceDelete(Admin $user, Notice $notice)
-    {
-        //
-    }
 }
