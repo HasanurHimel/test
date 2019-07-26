@@ -424,13 +424,7 @@
                </li>
 
                 @can('advertise.create', auth()->user())
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> 72bebc7e15e22ee47b837812f9d9c4c6b556f2ab
-=======
->>>>>>> 72bebc7e15e22ee47b837812f9d9c4c6b556f2ab
                 <li class="treeview menu-open">
                     <a href="#">
                         <i class="fa fa-dashboard"></i> <span>Advertise</span>
@@ -462,18 +456,10 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-
-
                         @if(\App\Models\Notice::find(1))
-
                             <li><a href="{{ route('notice.show', 1) }}"><i class="fa fa-circle-o"></i>Manage Notice</a></li>
-
                         @else
-
                             <li class="active"><a href="{{ route('notice.create') }}"><i class="fa fa-circle-o"></i> Create Notice</a></li>
-
-
-
                             @endif
                     </ul>
                </li>
