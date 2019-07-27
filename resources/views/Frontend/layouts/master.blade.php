@@ -49,7 +49,7 @@
                         <ul class="tag_nav">
 
                             @foreach($categories as $category)
-                            <li><a href="{{ route('category-post', $category->slug)  }}">{{ $category->category_name }}</a></li>
+                            <li><a href="{{ route('category.post', $category->slug)  }}">{{ $category->category_name }}</a></li>
 
                             @endforeach
                         </ul>
