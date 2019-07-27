@@ -6,6 +6,8 @@ Route::get('/', 'Frontend\HomeController@index')->name('/');
 Route::get('/article/{slug}', 'Frontend\HomeController@article')->name('article');
 Route::get('/detail', 'Frontend\HomeController@detail')->name('detail');
 Route::get('/test', 'TestController@index');
+Route::get('/category-post/{slug}', 'Frontend\HomeController@category_posts')->name('category.post');
+//Route::get('/sub-category-post/{slug}', 'Frontend\HomeController@sub_category_posts')->name('sub_category.post');
 
 
 

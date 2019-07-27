@@ -8,19 +8,19 @@
                 <li class="active"><a href="{{ url('/') }}"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a></li>
 
                 @foreach($categories as $category)
-                <li class="dropdown"> <a href="{{ $category->id }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ $category->category_name }}</a>
-                    @foreach($category->subCategories as $subCategory)
-                        @if($subCategory->id !== NULL)
+                <li class=""> <a href="{{ route('category.post', $category->slug) }}" >{{ $category->category_name }}</a>
+{{--                    @foreach($category->subCategories as $subCategory)--}}
+{{--                        @if($subCategory->id !== NULL)--}}
 
-                            <ul class="dropdown-menu" role="menu">
-                                @foreach($category->subCategories as $sub_category)
-                                    <li><a href="{{ $sub_category->id }}">{{ $sub_category->subcategory_name }}</a></li>
-                                    <br>
-                                @endforeach
-                            </ul>
-                        @endif
+{{--                            <ul class="dropdown-menu" role="menu">--}}
+{{--                                @foreach($category->subCategories as $sub_category)--}}
+{{--                                    <li><a href="{{ route('sub_category.post', $sub_category->slug) }}">{{ $sub_category->subcategory_name }}</a></li>--}}
+{{--                                    <br>--}}
+{{--                                @endforeach--}}
+{{--                            </ul>--}}
+{{--                        @endif--}}
 
-                        @endforeach
+{{--                        @endforeach--}}
                 </li>
                     @endforeach
 

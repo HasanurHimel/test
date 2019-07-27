@@ -5,7 +5,7 @@
             <div id="prev-button"><i class="fa fa-chevron-up"></i></div>
             <ul class="latest_postnav">
 
-                @foreach($blogs->take(5) as $latest_post)
+                @foreach($latest_posts as $latest_post)
                 <li>
                     <div class="media"> <a href="{{ route('article', $latest_post->slug) }}" class="media-left"> <img alt="" src="{{ $latest_post->getFirstMediaUrl('blog') }} "> </a>
                         <div class="media-body"> <a href="{{ route('article', $latest_post->slug) }}" class="catg_title">  {{  $latest_post->blog_title }}</a> </div>

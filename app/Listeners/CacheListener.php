@@ -43,11 +43,9 @@ class CacheListener
 //        $data=[];
         $media=Media::all();
 
-        $blogs=Blog::with('category')
-            ->where('publication_status', 1)
-            ->select('id', 'category_id', 'blog_title', 'slug', 'blog_short_description', 'blog_long_description','author_name', 'thumbnail', 'blog_section_id', 'publication_status', 'created_at', 'view_count')
+            $blogs=Blog::with('category', 'admin', 'blogSection')
             ->orderBy('id', 'DESC')
-            ->get();;
+            ->get();
 
         $categories=Category::with('subCategories')->orderBy('id', 'DESC')->take(6)->get();
 

@@ -6,6 +6,7 @@
 @section('content')
 
     <div id="fb-root"></div>
+
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3&appId=901805713515915&autoLogAppEvents=1"></script>
 
 
@@ -88,7 +89,7 @@
                         <ul class="spost_nav">
 
 {{--                            @dd($article->id)--}}
-                            @foreach($related_posts->take(5) as $related_post)
+                            @foreach($related_posts as $related_post)
 
                                 @if($article->id !== $related_post->id)
                             <li>
@@ -101,6 +102,7 @@
                             @endforeach
                         </ul>
                     </div>
-
+    @include('Frontend.includes.homepage.nested.sidebar')
 
 @endsection
+

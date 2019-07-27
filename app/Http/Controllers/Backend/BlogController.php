@@ -33,8 +33,9 @@ class BlogController extends Controller
         if (auth()->user()->can('blogs.viewAny')) {
 
             if (auth()->user()->can('admins.create')) {
-                $blogs = Blog::orderBy('id', 'DESC')
-                    ->get();
+
+                $blogs = cache()->get('blogs')->sortByDesc('id');
+
                 return view('Backend.includes.blog.blog-manage', compact('blogs'));
 
 

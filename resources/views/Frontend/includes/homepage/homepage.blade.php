@@ -50,5 +50,5 @@
 
           @include('Frontend.includes.homepage.nested.popular-post')
 
-
+    @include('Frontend.includes.homepage.nested.sidebar')
 @endsection

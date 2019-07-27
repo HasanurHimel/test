@@ -4,11 +4,7 @@
 
     <div class="single_post_content_left">
         <ul class="business_catgnav  wow fadeInDown">
-            @foreach($blogs
-            ->where('thumbnail', 1)
-            ->where('blog_section_id', 1)
-            ->take(1)
-             as $main_section)
+            @foreach($main_sections_big_div as $main_section)
 
             <li>
                 <figure class="bsbig_fig"> <a href="{{ route('article', $main_section->slug) }}" class="featured_img"> <img alt="" src="{{ $main_section->getFirstMediaUrl('blog') }}"> <span class="overlay"></span> </a>
@@ -28,11 +24,7 @@
 
     <div class="single_post_content_right">
         <ul class="spost_nav">
-            @foreach($blogs
-                        ->where('thumbnail', 0)
-                        ->where('blog_section_id', 1)
-                        ->take(4)
-                         as $main_section)
+            @foreach($main_sections_small_div as $main_section)
 
             <li>
                 <div class="media wow fadeInDown"> <a href="{{ route('article', $main_section->slug) }}" class="media-left"> <img alt="" src="{{ $main_section->getFirstMediaUrl('blog') }}"> </a>
